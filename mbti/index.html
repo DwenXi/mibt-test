@@ -1,0 +1,121 @@
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MBTI 性格测试</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="app">
+        <!-- 欢迎页面 -->
+        <div id="welcome-screen" class="screen active">
+            <div class="container">
+                <div class="logo">
+                    <div class="logo-icon">🧠</div>
+                    <h1>MBTI 性格测试</h1>
+                </div>
+                <p class="subtitle">了解你的性格类型，发现最适合的职业方向</p>
+                <div class="features">
+                    <div class="feature">
+                        <span class="feature-icon">📊</span>
+                        <span>专业测评</span>
+                    </div>
+                    <div class="feature">
+                        <span class="feature-icon">🎯</span>
+                        <span>职业建议</span>
+                    </div>
+                    <div class="feature">
+                        <span class="feature-icon">⚡</span>
+                        <span>快速完成</span>
+                    </div>
+                </div>
+                <button id="start-btn" class="btn-primary btn-short">开始测试</button>
+            </div>
+        </div>
+
+        <!-- 测试页面 -->
+        <div id="test-screen" class="screen">
+            <div class="container">
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                </div>
+                <div class="question-counter">
+                    <span id="current-question">1</span> / <span id="total-questions">90</span>
+                </div>
+                
+                <div class="question-container">
+                    <h2 id="question-text"></h2>
+                    <div class="options">
+                        <button class="option-btn" data-option="A">
+                            <span class="option-letter">A</span>
+                            <span class="option-text"></span>
+                        </button>
+                        <button class="option-btn" data-option="B">
+                            <span class="option-letter">B</span>
+                            <span class="option-text"></span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="navigation-buttons">
+                    <button id="prev-btn" class="btn-secondary" disabled>上一个</button>
+                    <button id="next-btn" class="btn-primary">下一个</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 结果页面 -->
+        <div id="result-screen" class="screen">
+            <div class="container">
+                <div class="result-header">
+                    <h1>你的MBTI类型</h1>
+                    <div class="personality-type" id="personality-type">INTJ</div>
+                </div>
+                
+                <div class="dimensions">
+                    <div class="dimension">
+                        <div class="dimension-label">外向 (E) - 内向 (I)</div>
+                        <div class="dimension-bar">
+                            <div class="dimension-fill" id="ei-fill"></div>
+                        </div>
+                        <div class="dimension-value" id="ei-value">I: 65%</div>
+                    </div>
+                    <div class="dimension">
+                        <div class="dimension-label">感觉 (S) - 直觉 (N)</div>
+                        <div class="dimension-bar">
+                            <div class="dimension-fill" id="sn-fill"></div>
+                        </div>
+                        <div class="dimension-value" id="sn-value">N: 70%</div>
+                    </div>
+                    <div class="dimension">
+                        <div class="dimension-label">思考 (T) - 情感 (F)</div>
+                        <div class="dimension-bar">
+                            <div class="dimension-fill" id="tf-fill"></div>
+                        </div>
+                        <div class="dimension-value" id="tf-value">T: 80%</div>
+                    </div>
+                    <div class="dimension">
+                        <div class="dimension-label">判断 (J) - 知觉 (P)</div>
+                        <div class="dimension-bar">
+                            <div class="dimension-fill" id="jp-fill"></div>
+                        </div>
+                        <div class="dimension-value" id="jp-value">J: 75%</div>
+                    </div>
+                </div>
+
+                <div class="career-recommendations">
+                    <h3>职业建议</h3>
+                    <div class="career-list" id="career-list">
+                        <!-- 职业建议将在这里动态生成 -->
+                    </div>
+                </div>
+
+                <div class="action-buttons">
+                    <button id="restart-btn" class="btn-secondary">重新测试</button>
+                    <button id="share-btn" class="btn-primary">分享结果</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
